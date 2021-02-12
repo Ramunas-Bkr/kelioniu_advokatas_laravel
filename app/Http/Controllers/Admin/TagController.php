@@ -66,7 +66,10 @@ class TagController extends Controller
      */
     public function edit(Tag $tag)
     {
-        //
+
+        return view('admin.tag.edit', [
+            'tag' => $tag
+        ]);
     }
 
     /**
@@ -78,7 +81,9 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $tag->title = $request->title;
+        $tag->save();
+        return redirect()->back()->withSuccess('Žyma pakeista sėkmingai');
     }
 
     /**
@@ -89,6 +94,7 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+        return redirect()->back()->withSuccess('Žyma sėkmingai ištrinta');
     }
 }

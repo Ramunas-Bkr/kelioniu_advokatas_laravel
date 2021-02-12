@@ -5,12 +5,18 @@
 @section('content')
             <!-- Content Header (Page header) -->
     <div class="content-header">
-      <div class="container-fluid">
+      <div class="container-fluid">        
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0">Žymos</h1>
           </div>
         </div><!-- /.row -->
+         @if (session('success'))
+              <div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
+              </div>
+          @endif
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -22,10 +28,10 @@
           <table class="table table-striped projects">
               <thead>
                   <tr>
-                      <th style="width: 10%">
+                      <th style="width: 5%">
                           ID
                       </th>
-                      <th style="width: 60%">
+                      <th style="width: 65%">
                           Žymos pavadinimas
                       </th>
                       <th style="width: 30%">
@@ -44,16 +50,20 @@
                           </h5>
                       </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm" href="{{ route('tag.edit', $tag["id"]) }}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Redaguoti
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Trinti
-                          </a>
+                          <form action="{{ route('tag.destroy', $tag["id"]) }}" method="POST" style="display: inline-block">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">
+                                <i class="fas fa-trash">
+                                </i>
+                                Trinti
+                            </button>
+                          </form>
                       </td>
                   </tr>
                   @endforeach
