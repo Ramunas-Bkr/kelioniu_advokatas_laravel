@@ -18,13 +18,13 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row">
           @if (session('success'))
-            <div class="alert alert-success" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-              <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
-            </div>
+              <div class="alert alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-check"></i>{{ session('success') }}</h4>
+              </div>
           @endif
+        <div class="row">
             <div class="col-lg-12">
             <!-- general form elements -->
             <div class="card card-primary">

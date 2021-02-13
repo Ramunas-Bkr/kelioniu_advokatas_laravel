@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('img');
             $table->text('text');
             $table->timestamps();
+            $table->bigInteger('tag_id')->unsigned();
         });
     }
 

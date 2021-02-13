@@ -84,7 +84,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('post.create') }}" class="nav-link">
                                         <p>Pridėti naujieną</p>
                                     </a>
                                 </li>
@@ -192,6 +192,7 @@
     <script src="https://cdn.tiny.cloud/1/jxsqeq85qzdwuqqqruya91jqsrhqtxykhxtks6sn0t1kn69g/tinymce/5/tinymce.min.js"
         referrerpolicy="origin"></script>
     <script type="text/javascript" src="/packages/barryvdh/elfinder/js/standalonepopup.js"></script>
+    <script src="https://cdn.tiny.cloud/1/qe6vpp7gu09lcjeudzhaezckvj9pemw12y7dhhfbak8v3fgi/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="/admin/admin.js"></script>
 </body>
 
