@@ -1,6 +1,6 @@
 @extends('layouts.admin_layout ')
 
-@section('title', 'Pridėti naujieną')
+@section('title', 'Koreguoti naujieną')
 
 @section('content')
             <!-- Content Header (Page header) -->
@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Pridėti naujieną</h1>
+            <h1 class="m-0">Koreguoti naujieną: {{ $post['title'] }}</h1>
           </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -29,13 +29,14 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <!-- form start -->
-              <form action="{{ route('post.store') }}" method="POST">
+              <form action="{{ route('post.update', $post['id']) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="card-body">
                   <div class="col-sm-8">  
                     <div class="form-group">
                         <label for="exampleInputEmail1">Naujienos antraštė</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Įveskite naujienos pavadinimą" required>
+                        <input value="{{ $post['title'] }}" type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Įveskite naujienos pavadinimą" required>
                     </div>
                   </div>
                   <div class="form-group">
@@ -44,7 +45,9 @@
                             <label>Pasirinkite žymą</label>
                             <select name="tag_id" class="custom-select" required>
                                 @foreach ($tags as $tag)
-                                    <option value="{{$tag['id']}}">{{ $tag['title'] }}</option>
+                                    <option value="{{$tag['id']}}" @if ($tag['id'] == $post['tag_id']) selected @endif>
+                                        {{ $tag['title'] }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -52,21 +55,18 @@
                   </div>
                   <div class="form-group">
                     <label for="feature_image">Pagrindinė nuotrauka</label>
-                    <img src="" alt="" class="img-uploaded mb-2" style="display: block; width:10%; height:auto">
-                    <input class="form-control" type="text" id="feature_image" name="img" value="" readonly>
+                    <img src="/{{ $post['img'] }}" alt="" class="img-uploaded mb-2" style="display: block; width:10%; height:auto">
+                    <input class="form-control" type="text" id="feature_image" name="img" value="{{ $post['img'] }}" readonly>
                     <a href="" class="popup_selector" data-inputid="feature_image">Pasirinkite nuotrauką</a>
                   </div>
                   <div class="form-group">
-                    <textarea name="text" class="editor"></textarea>
+                    <textarea name="text" class="editor">{{ $post['text'] }}</textarea>
                   </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Patvirtinti</button>
+                  <button type="submit" class="btn btn-primary">Atnaujinti</button>
                 </div>
               </form>
             </div>
-            <!-- /.card -->
-
-           
         </div>
        </div>
     </section>

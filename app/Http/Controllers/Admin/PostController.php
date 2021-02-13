@@ -16,7 +16,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('id', 'desc')->get();
+
+        return view('admin.post.index', [
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -40,7 +44,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+        $post->title = $request->title;
+        $post->img = $request->img;
+        $post->text = $request->text;
+        $post->tag_id = $request->tag_id;
+        $post->save();
+
+        return redirect()->back()->withSuccess('Naujiena pridėta sėkmingai');
     }
 
     /**
@@ -62,7 +73,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $tags = Tag::orderBy('id', 'DESC')->get();
+
+        return view('admin.post.edit', [
+            'tags' => $tags,
+            'post' => $post
+        ]);
     }
 
     /**
@@ -74,7 +90,13 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->img = $request->img;
+        $post->text = $request->text;
+        $post->tag_id = $request->tag_id;
+        $post->save();
+
+        return redirect()->back()->withSuccess('Naujiena atnaujinta sėkmingai');
     }
 
     /**
