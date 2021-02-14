@@ -121,12 +121,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('testimonial.index') }}" class="nav-link">
                                         <p>Atsiliepimų sąrašas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{ route('testimonial.create') }}" class="nav-link">
                                         <p>Pridėti atsiliepimą</p>
                                     </a>
                                 </li>
