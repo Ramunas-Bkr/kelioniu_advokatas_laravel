@@ -49,11 +49,11 @@
                   <div class="form-group">
                     <label for="feature_image">Nuotrauka</label>
                     <img src="/{{ $testimonial['image'] }}" alt="" class="img-uploaded mb-0" style="display: block; width:20%; height:auto">
-                    <input class="form-control" type="text" id="feature_image" name="image" value="" readonly hidden>
+                    <input class="form-control" type="text" id="feature_image" name="image" value="{{ $testimonial['image'] }}" readonly hidden>
                     <a href="" class="popup_selector" data-inputid="feature_image">Pakeisti nuotrauką</a>
                   </div>
                   <div class="form-group">
-                    <textarea name="text" class="editor" rows="10" placeholder="Įrašyti atsiliepimą">{{ $testimonial['text'] }}</textarea>
+                    <textarea name="text" rows="3" cols="100" placeholder="Įrašyti atsiliepimą">{{ $testimonial['text'] }}</textarea>
                   </div>
                   <div class="form-group">
                       <div class="col-sm-1">

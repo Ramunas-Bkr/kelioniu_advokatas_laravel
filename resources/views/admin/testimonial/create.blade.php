@@ -52,7 +52,7 @@
                     <a href="" class="popup_selector" data-inputid="feature_image">Pasirinkite nuotrauką</a>
                   </div>
                   <div class="form-group">
-                    <textarea name="text" class="editor" rows="10" placeholder="Įrašyti atsiliepimą"></textarea>
+                    <textarea name="text" rows="3" cols="100" placeholder="Įrašyti atsiliepimą"></textarea>
                   </div>
                   <div class="form-group">
                       <div class="col-sm-1">
