@@ -55,12 +55,12 @@
                   </div>
                   <div class="form-group">
                     <label for="feature_image">Pagrindinė nuotrauka</label>
-                    <img src="/{{ $post['img'] }}" alt="" class="img-uploaded mb-2" style="display: block; width:10%; height:auto">
+                    <img src="{{ $post['img'] }}" alt="" class="img-uploaded mb-2" style="display: block; width:10%; height:auto">
                     <input class="form-control" type="text" id="feature_image" name="img" value="{{ $post['img'] }}" readonly>
                     <a href="" class="popup_selector" data-inputid="feature_image">Pasirinkite nuotrauką</a>
                   </div>
                   <div class="form-group">
-                    <textarea name="text" class="editor">{{ $post['text'] }}</textarea>
+                    <textarea name="text" class="editor" rows="25">{{ $post['text'] }}</textarea>
                   </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Atnaujinti</button>

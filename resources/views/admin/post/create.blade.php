@@ -57,7 +57,7 @@
                     <a href="" class="popup_selector" data-inputid="feature_image">Pasirinkite nuotrauką</a>
                   </div>
                   <div class="form-group">
-                    <textarea name="text" class="editor"></textarea>
+                    <textarea name="text" class="editor" rows="25"></textarea>
                   </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Patvirtinti</button>
