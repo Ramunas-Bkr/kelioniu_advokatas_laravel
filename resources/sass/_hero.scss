@@ -1,0 +1,164 @@
+.hero {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+    background-image: url(/img/hero.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    
+
+        h2 {
+            display: inline-block;
+            width: 70%;
+            // height: 100vh;
+            color: white;
+            font-size: 40px;
+            padding-top: 200px;
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            display: inline-block;
+            width: 70%;
+            // height: 100vh;
+            color: white;
+            font-size: 60px;
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+        }
+        .arrows {
+            display: inline-block;
+            width: 100%;
+            margin-top: 150px;
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
+            a {
+                display: inline-block;
+                width: 100%;
+                text-decoration: none;
+                color: $yellowColor;
+                font-size: 50px;
+            }
+            .arrow1 {
+                    animation-name: opacity3;
+                    animation-iteration-count: infinite;
+                    animation-duration: 2s;
+                        @keyframes opacity1 {
+                            0% {
+                                opacity: 0;
+                            }
+                            10% {
+                                opacity: .2;
+                            }
+                            20% {
+                                opacity: .4;
+                            }
+                            30% {
+                                opacity: .6;
+                            }
+                            40% {
+                                opacity: .8;
+                            }
+                            50% {
+                                opacity: 1;
+                            }
+                            60% {
+                                opacity: 1;
+                            }
+                            70% {
+                                opacity: 1;
+                            }
+                            80% {
+                                opacity: 1;
+                            }
+                            90% {
+                                opacity: 1;
+                            }
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+            }
+            .arrow2 {
+                animation-name: opacity2;
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+                    @keyframes opacity2 {
+                        0% {
+                            opacity: 0;
+                        }
+                        10% {
+                            opacity: 0;
+                        }
+                        20% {
+                            opacity: 0;
+                        }
+                        30% {
+                            opacity: .2;
+                        }
+                        40% {
+                            opacity: .4;
+                        }
+                        50% {
+                            opacity: .6;
+                        }
+                        60% {
+                            opacity: .8;
+                        }
+                        70% {
+                            opacity: 1;
+                        }
+                        80% {
+                            opacity: 1;
+                        }
+                        90% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+            }
+            .arrow3 {
+                animation-name: opacity1;
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+                    @keyframes opacity3 {
+                        0% {
+                            opacity: 0;
+                        }
+                        10% {
+                            opacity: 0;
+                        }
+                        20% {
+                            opacity: 0;
+                        }
+                        30% {
+                            opacity: 0;
+                        }
+                        40% {
+                            opacity: 0;
+                        }
+                        50% {
+                            opacity: .2;
+                        }
+                        60% {
+                            opacity: .4;
+                        }
+                        70% {
+                            opacity: .6;
+                        }
+                        80% {
+                            opacity: .8;
+                        }
+                        90% {
+                            opacity: 1;
+                        }
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+        }
+    }
+}

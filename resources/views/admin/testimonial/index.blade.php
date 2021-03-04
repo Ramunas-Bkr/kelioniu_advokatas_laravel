@@ -72,7 +72,7 @@
                           </p>
                       </td>
                       <td>
-                          <img src="/{{ $testimonial['image'] }}" alt="" class="img-uploaded mb-0" style="display: block; width:80%; height:auto">
+                          <img src="/{{ $testimonial['image'] }}" alt="" class="img-uploaded mb-0" style="display: block; width:100%; height:auto">
                       </td>
                       <td>
                           <p class="mb-0" style="text-align: center">

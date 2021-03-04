@@ -1,0 +1,121 @@
+@media (max-width: 1300px) {
+  .first-grid {
+    .blog {
+      .blogs_block1,
+      .blogs_block2,
+      .blogs_block3 {
+        .headline-top {
+          .date {
+            width: 50%;
+            margin: 20px 10px;
+          }
+          .hashtag {
+            float: right;
+            margin: 20px 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .first-grid {
+    main {
+      grid-template-areas: '. block1 . block2 .';
+      grid-template-columns: 1fr 40% 1fr 40% 1fr;
+      .block3 {
+        display: none;
+      }
+    }
+  }
+  .modal {
+      .modal-content {
+          width: 60%;
+      }
+  }
+}
+
+@media (max-width: 1020px) {
+  .links {
+    display: none;
+  }
+  .mob-links {
+    display: block;
+    float: right;
+  }
+  .first-grid {
+    .testimonials {
+      .testimonial-block {
+        width: 600px;
+        margin: 20px calc(50% - 300px);
+      }
+    }
+  }
+  .first-grid {
+    .blog {
+      grid-template-areas:
+        ' blog-head blog-head blog-head'
+        ' blog-block1 . blog-block2';
+      grid-template-columns: 49% 1fr 49%;
+      .blogs_block3 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .first-grid {
+    main {
+      grid-template-areas: '. block1 . ';
+      grid-template-columns: 1fr 80% 1fr;
+      .block2 {
+        display: none;
+      }
+      .block3 {
+        display: none;
+      }
+    }
+  }
+  .first-grid {
+    .blog {
+      grid-template-areas:
+        ' blog-head blog-head blog-head'
+        ' . blog-block1 .';
+      grid-template-columns: 1fr 98% 1fr;
+      .blogs_block2, .blogs_block3 {
+        display: none;
+      }
+    }
+  }
+    .modal {
+      .modal-content {
+          width: 80%;
+      }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    img {
+      text-align: center;
+    }
+  }
+  .hero {
+    h2 {
+      font-size: 30px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .first-grid {
+    .testimonials {
+      .testimonial-block {
+        width: 400px;
+        margin: 20px calc(50% - 200px);
+      }
+    }
+  }
+}

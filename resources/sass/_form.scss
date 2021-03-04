@@ -1,0 +1,278 @@
+@mixin main-blocks($number) {
+    display: grid;
+    grid-area: $number;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 1s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+    .main-images {
+        overflow: hidden;
+    }
+    h3 {
+        color: $blueColor;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 30px;
+        margin: 15px 5px;
+    }
+    p {
+        color: $kelioniuBlack;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 10px 5px;
+    }
+}
+
+@mixin blog-blocks($number) {
+    display: grid;
+    grid-area: $number;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .blogs-images {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: transform 1s ease;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+    .headline-top {
+        display: inline-block;
+        width: 100%;
+        .date {
+            display: inline-block;
+            width: 40%;
+            margin: 20px;
+            font-size: 14px;
+            color: #828282;
+            line-height: 15px;
+            font-weight: 200;
+        }
+        .hashtag {
+            display: inline-block;
+            width: 30%;
+            text-align: right;
+            margin: 20px;
+            font-size: 14px;
+            color: #828282;
+            line-height: 15px;
+            font-weight: 200;
+        }
+    }
+    .blogs-headline {
+        display: inline-block;
+        text-align: center;
+        margin: 0 20px;
+        color: #111;
+        font-size: 22px;
+        text-decoration: none;
+        font-weight: 600;
+        line-height: 25px;
+        transition: color 0.5s;
+        &:hover {
+            color: #f34236;
+        }
+    }
+    p {
+        display: inline-block;
+        margin: 20px;
+        color: #828282;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+    .read {
+        display: inline-block;
+        width: 37%;
+        color: #f34236;
+        margin: 0 20px 30px;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.5s;
+        &:hover {
+            color: #111;
+        }
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #f34236;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            transition: background-color 0.5s;
+        }
+        &:hover:after {
+            background-color: #111;
+        }
+    }
+}
+
+.first-grid {
+    display: grid;
+    grid-template-areas: " . blocks . " " . testimonials . " " . blog . " " contacts contacts contacts ";
+    grid-template-columns: 1fr 80% 1fr;
+    main {
+        display: grid;
+        grid-area: blocks;
+        grid-template-areas: " block1 . block2 . block3 ";
+        grid-template-columns: 1fr 40px 1fr 40px 1fr;
+        margin: 50px 0;
+        .block1 {
+            @include main-blocks(block1);
+        }
+        .block2 {
+            @include main-blocks(block2);
+        }
+        .block3 {
+            @include main-blocks(block3);
+        }
+    }
+    .testimonials {
+        display: grid;
+        grid-area: testimonials;
+        margin: 35px 0;
+        .testimonial-head {
+            display: inline-block;
+            width: 100%;
+            color: $blueColor;
+            font-size: 35px;
+            font-weight: 600;
+            text-align: center;
+            margin: 35px 0;
+        }
+        .testimonial-block {
+            display: inline-block;
+            width: 800px;
+            margin: 20px calc(50% - 400px);
+            text-align: center;
+            .testimonial-box {
+                display: none;
+                width: 100%;
+                grid-area: box;
+                background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                position: relative;
+                text-align: left;
+                min-height: 350px;
+                transition: width 2s;
+                .box-photo {
+                    display: inline-block;
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 50%;
+                    color: #fff;
+                    //background-image: url(../img/Testimonials/IevaSabiene.jpg);
+                    background-size: cover;
+                    background-position: bottom center;
+                    margin-left: 30px;
+                    top: -50px;
+                    left: 0;
+                    position: absolute;
+                    img {
+                        overflow: hidden;
+                    }
+                }
+                .box-quotes {
+                    display: inline-block;
+                    top: -30px;
+                    right: -10px;
+                    font-size: 160px;
+                    color: #dfdfdf;
+                    position: absolute;
+                }
+                .box-stars {
+                    display: inline-block;
+                    width: 100%;
+                    margin-left: 30px;
+                    margin-top: 70px;
+                    color: $yellowColor;
+                }
+                .box-name {
+                    display: inline-block;
+                    width: 100%;
+                    margin-left: 30px;
+                    h5 {
+                        font-size: 20px;
+                        font-weight: 400;
+                    }
+                    h6 {
+                        font-size: 15px;
+                        font-weight: 200;
+                        font-style: italic;
+                    }
+                    .testimonial-text {
+                        color: gray;
+                        padding: 30px 50px;
+                    }
+                }
+            }
+        }
+        .testim-arrows {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 28px;
+            line-height: 30px;
+            margin: 30px 0;
+            cursor: pointer;
+            color: white;
+            .fa {
+                background-color: $blueColor;
+                padding: 10px 13px;
+                border-radius: 50%;
+                border: solid 5px #809bfa;
+                margin: 0 5px;
+            }
+        }
+    }
+    .blog {
+        display: grid;
+        grid-area: blog;
+        grid-template-areas: 
+        " blog-head blog-head blog-head blog-head blog-head " 
+        " blog-block1 . blog-block2 . blog-block3 ";
+        grid-template-columns: 33% 1fr 33% 1fr 33%;
+        .blog-head {
+            display: grid;
+            grid-area: blog-head;
+            font-size: 35px;
+            font-weight: 600;
+            text-align: center;
+            a {
+                text-decoration: none;
+                color: $blueColor;
+                transition: color 0.5s;
+                &:hover {
+                    color: #111;
+                }
+            }
+        }
+        .blogs_block1 {
+            @include blog-blocks(blog-block1);
+        }
+        .blogs_block2 {
+            @include blog-blocks(blog-block2);
+        }
+        .blogs_block3 {
+            @include blog-blocks(blog-block3);
+        }
+    }
+    footer {
+        display: grid;
+        grid-area: contacts;
+    }
+}
